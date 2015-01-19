@@ -13,6 +13,7 @@
 		867B91A01A6B34CA00DC7ABB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867B919F1A6B34CA00DC7ABB /* Images.xcassets */; };
 		867B91A31A6B34CA00DC7ABB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 867B91A11A6B34CA00DC7ABB /* LaunchScreen.xib */; };
 		867B91AF1A6B34CA00DC7ABB /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B91AE1A6B34CA00DC7ABB /* tipsTests.swift */; };
+		867B91C01A6C920900DC7ABB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B91BF1A6C920900DC7ABB /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		867B91A81A6B34CA00DC7ABB /* tipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		867B91AD1A6B34CA00DC7ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		867B91AE1A6B34CA00DC7ABB /* tipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTests.swift; sourceTree = "<group>"; };
+		867B91BF1A6C920900DC7ABB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				867B919F1A6B34CA00DC7ABB /* Images.xcassets */,
 				867B91A11A6B34CA00DC7ABB /* LaunchScreen.xib */,
 				867B91961A6B34CA00DC7ABB /* Supporting Files */,
+				867B91BF1A6C920900DC7ABB /* SettingsViewController.swift */,
 			);
 			path = tips;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				867B919B1A6B34CA00DC7ABB /* ViewController.swift in Sources */,
 				867B91991A6B34CA00DC7ABB /* AppDelegate.swift in Sources */,
+				867B91C01A6C920900DC7ABB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -347,6 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
