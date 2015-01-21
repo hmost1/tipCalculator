@@ -16,12 +16,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     
+    let timePersist = 10.00
+    var defaults = NSUserDefaults.standardUserDefaults()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        
+        if let lastUsed = defaults.objectForKey("lastUsed") as? NSDate{
+            //var time  = defaults.objectForKey("lastUsed")
+            println("Last time used: \(lastUsed)")
+            
+            var currentDate = NSDate()
+            var timeDiff:  NSTimeInterval  = currentDate.timeIntervalSinceDate(lastUsed)
+            //diff is the time difference in seconds: 
+           
+            var minutes = floor(timeDiff/60);
+            println("\(minutes)")
+            if minutes<timePersist{
+                if let lastBill = defaults.objectForKey("lastBill") as? String{
+                    billField.text = lastBill
+                    onEditingChanged(self)
+                }
+            }
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +64,8 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f",tip)
         totalLabel.text = String(format:  "%.2f",total)
+        
+        defaults.setObject(billField.text, forKey:"lastBill")
     }
     
     @IBAction func valueChanged(sender: AnyObject) {
@@ -53,7 +79,6 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //get info from settings
-        var defaults = NSUserDefaults.standardUserDefaults()
         
         if let tipSettingNotNill = defaults.integerForKey("defaultTip") as Int?{
             self.tipControl.selectedSegmentIndex = defaults.integerForKey("defaultTip")
@@ -64,6 +89,10 @@ class ViewController: UIViewController {
         
         //redo the total calculation: 
         onEditingChanged(self)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        //save most recent bill here
     }
     
 }

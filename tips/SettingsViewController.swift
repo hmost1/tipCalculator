@@ -13,12 +13,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var defaultTip: UISegmentedControl!
     @IBOutlet weak var defaultSplit: UITextField!
     
+    var defaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         //checks if default already set, if not sets it
-        var defaults = NSUserDefaults.standardUserDefaults()
         if let tipSettingNotNill = defaults.integerForKey("defaultTip") as Int?{
             self.defaultTip.selectedSegmentIndex = defaults.integerForKey("defaultTip")
         }
