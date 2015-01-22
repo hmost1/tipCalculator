@@ -29,14 +29,12 @@ class ViewController: UIViewController {
         
         if let lastUsed = defaults.objectForKey("lastUsed") as? NSDate{
             //var time  = defaults.objectForKey("lastUsed")
-            println("Last time used: \(lastUsed)")
             
             var currentDate = NSDate()
             var timeDiff:  NSTimeInterval  = currentDate.timeIntervalSinceDate(lastUsed)
-            //diff is the time difference in seconds: 
+           //diff is the time difference in seconds:
            
             var minutes = floor(timeDiff/60);
-            println("\(minutes)")
             if minutes<timePersist{
                 if let lastBill = defaults.objectForKey("lastBill") as? String{
                     billField.text = lastBill
